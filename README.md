@@ -14,3 +14,6 @@ curl -d "{\"id\":2,\"message\":\"Japan\"}" -H "Content-Type: application/json" -
 ##Delete the Resource ID:
 curl -X DELETE http://localhost:8888/api/1.0/message/9
 
+
+The Application is deployed at - NO UI - REST Support Only
+https://rest-simple-message.herokuapp.com/api/1.0/message/0
