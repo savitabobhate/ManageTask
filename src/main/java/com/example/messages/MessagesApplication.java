@@ -7,8 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MessagesApplication {
 
 	public static void main(String[] args) {
-		System.out.println("In Main...");
+		System.out.println("Starting the MessagesApplication");
 		SpringApplication.run(MessagesApplication.class, args);
 	}
-
 }
