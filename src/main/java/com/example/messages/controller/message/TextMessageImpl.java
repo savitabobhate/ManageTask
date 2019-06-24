@@ -8,20 +8,21 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TextMessage implements IMessage {
+public class TextMessageImpl implements IMessage {
 	
 	private static Map<Integer,Message> messages = new HashMap<Integer,Message>();
+	private static int TOTAL_MESSAGES_COUNTER = 0;
 	
 	static {
-		messages.put(1, new Message(1,"1-India"));
-		messages.put(2, new Message(2,"2-Japna"));
-		messages.put(3, new Message(3,"3-China"));
-		messages.put(4, new Message(4,"4-Romania"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"1-India"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"2-Japan"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"3-China"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"4-Romania"));
 	}
 	
 	@Override
 	public int createMessage(Message msg) {
-		int id = messages.size()+1;
+		int id = ++TOTAL_MESSAGES_COUNTER;
 		msg.setId(id);
 		messages.put(id,msg);
 		System.out.println("Added message "+msg);
@@ -30,7 +31,7 @@ public class TextMessage implements IMessage {
 
 	@Override
 	public Message getMessage(int id) {
-		return messages.get(id+1);
+		return messages.get(id);
 	}
 
 	@Override
