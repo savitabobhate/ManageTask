@@ -1,4 +1,4 @@
-# REST-Simple-Messages - 
+# REST-Simple-Messages
 NO UI - REST Support Only <br/>
 
 A Demo of this application is deployed at: 
