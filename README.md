@@ -4,7 +4,6 @@ NO UI - REST Support Only <br/>
 A Demo of this application is deployed at: 
 https://rest-simple-message.herokuapp.com/api/1.0/message <br/>
 
-##Create A Resource:<br/>
 How to build:<br/>
 Clone/Download this application and execute 'mvn package'
 
