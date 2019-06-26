@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 
 @Repository
 public class TextMessageImpl implements IMessage {
@@ -31,7 +34,12 @@ public class TextMessageImpl implements IMessage {
 
 	@Override
 	public Message getMessage(int id) {
-		return messages.get(id);
+		Message msg = messages.get(id);
+		if(!Objects.isNull(msg)) {
+			return msg;
+		}else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource Not Found for id "+id);
+		}
 	}
 
 	@Override
@@ -44,6 +52,8 @@ public class TextMessageImpl implements IMessage {
 	public Message deleteMessage(int id) {
 		if(messages.remove(id)!=null) {
 			System.out.println("Deleted message for " + id);
+		}else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource Not Found for id "+id);
 		}
 		return null;
 	}
@@ -51,9 +61,11 @@ public class TextMessageImpl implements IMessage {
 	@Override
 	public Message updateMessage(Message msg) {
 		System.out.println("Updated Message "+msg);
-		messages.put(msg.getId(), msg);
+		if(messages.containsKey(msg.getId())) {
+			messages.put(msg.getId(), msg);
+		}else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource Not Found for id "+msg.getId());
+		}
 		return msg;
 	}
-	
-	
 }
