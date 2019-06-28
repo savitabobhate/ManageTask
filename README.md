@@ -3,12 +3,15 @@ NO UI - REST Support Only <br/>
 
 #This is simple spring-boot application created to manage task list. In this application CURD operations will be performed on task list.<br/>
 
-#A Code of this application is uploaded on https://43725588@stash.hk.hsbc/scm/managetask/managetask_rest.git: <br/>
+#A Code of this application is uploaded on https://43725588@stash.hk.hsbc/scm/managetask/managetask_rest.git <br/>
 
-# How to build:<br/>
-Clone/Download this application and execute 'mvn package'
 
-# Once project build successfully "messages-0.0.1-SNAPSHOT.jar" will be created along with target folder.
+
+
+
+# How to build :<br/>
+#Clone/Download this application and execute 'mvn package' <br/>
+#Once project build successfully messages-0.0.1-SNAPSHOT.jar will be created along with target folder <br/>
 
 # How to run jar file :<br/>
 java -jar messages-0.0.1-SNAPSHOT.jar
@@ -25,19 +28,19 @@ http://localhost:8888/api/1.0/message
 
 ## Testing through CURL
 
-# Create A Resource:<br/>
+## Create A Resource:<br/>
 curl -d "{\"id\":1,\"message\":\"Create Jira Ticket\"}" -H "Content-Type: application/json" -X POST http://localhost:8888/api/1.0/message
 
-# Read All Resources:<br/>
+## Read All Resources:<br/>
 curl http://localhost:8888/api/1.0/message
 
-# Read Resource for the given ID: <br/>
+## Read Resource for the given ID: <br/>
 curl http://localhost:8888/api/1.0/message/1
 
-# Update Resource for the given ID: <br/>
+## Update Resource for the given ID: <br/>
 curl -d "{\"id\":2,\"message\":\"Mark All Open Items close\"}" -H "Content-Type: application/json" -X PUT http://localhost:8888/api/1.0/message
 
-# Delete the Resource ID: <br/>
+## Delete the Resource ID: <br/>
 curl -X DELETE http://localhost:8888/api/1.0/message/2
 
 
@@ -45,18 +48,18 @@ curl -X DELETE http://localhost:8888/api/1.0/message/2
 
 #Launch POSTMAN and try with below CURD operations
 
-# 1) TO get complete list of tasks
+## To get complete list of tasks
 Set operation to "GET"  and URL  : http://localhost:8888/api/1.0/message
 
-# 2) To get specific task, use ID in URL
+## To get specific task, use ID in URL
 Set operations to "GET" and URL  : http://localhost:8888/api/1.0/message/3
 
-# 3) To Create new task 
+## To Create new task 
 Set Operations to POST and URL : http://localhost:8888/api/1.0/message/ and  BODY:{"id":1,"message":"Create Jira Ticket"}
 
-# 4) To update existing task
+## To update existing task
  Set Operations to "PUT" , URL : http://localhost:8888/api/1.0/message/ and BODY : {"id":2,"message":"Mark All Open Items close"}
 
- # 5) TO delete existing task 
+ ## TO delete existing task 
 Set Operations to "DELETE", URL : http://localhost:8888/api/1.0/message/3
 #3rd record will get deleted
