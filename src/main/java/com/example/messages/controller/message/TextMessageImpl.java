@@ -16,11 +16,11 @@ public class TextMessageImpl implements IMessage {
 	private static Map<Integer,Message> messages = new HashMap<Integer,Message>();
 	private static int TOTAL_MESSAGES_COUNTER = 0;
 	
-	static {
-		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"1-India"));
-		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"2-Japan"));
-		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"3-China"));
-		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"4-Romania"));
+ 	static {
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"1-Monitor AppD report"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"2-Monitor GSD "));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"3-Assign incidents to respective team"));
+		messages.put(++TOTAL_MESSAGES_COUNTER, new Message(TOTAL_MESSAGES_COUNTER,"4-Verify CR and PR's"));
 	}
 	
 	@Override
