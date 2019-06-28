@@ -5,12 +5,12 @@ NO UI - REST Support Only <br/>
 
 #A Code of this application is uploaded on https://43725588@stash.hk.hsbc/scm/managetask/managetask_rest.git: <br/>
 
-#How to build:<br/>
+# How to build:<br/>
 Clone/Download this application and execute 'mvn package'
 
-#Once project build successfully "messages-0.0.1-SNAPSHOT.jar" will be created along with target folder.
+# Once project build successfully "messages-0.0.1-SNAPSHOT.jar" will be created along with target folder.
 
-#How to run jar file :<br/>
+# How to run jar file :<br/>
 java -jar messages-0.0.1-SNAPSHOT.jar
 
 #Above command will help to start application using messages-0.0.1-SNAPSHOT.jar <br/>
@@ -25,23 +25,23 @@ http://localhost:8888/api/1.0/message
 
 ## Testing through CURL
 
-## Create A Resource:<br/>
+# Create A Resource:<br/>
 curl -d "{\"id\":1,\"message\":\"Create Jira Ticket\"}" -H "Content-Type: application/json" -X POST http://localhost:8888/api/1.0/message
 
-## Read All Resources:<br/>
+# Read All Resources:<br/>
 curl http://localhost:8888/api/1.0/message
 
-## Read Resource for the given ID: <br/>
+# Read Resource for the given ID: <br/>
 curl http://localhost:8888/api/1.0/message/1
 
-## Update Resource for the given ID: <br/>
+# Update Resource for the given ID: <br/>
 curl -d "{\"id\":2,\"message\":\"Mark All Open Items close\"}" -H "Content-Type: application/json" -X PUT http://localhost:8888/api/1.0/message
 
-## Delete the Resource ID: <br/>
+# Delete the Resource ID: <br/>
 curl -X DELETE http://localhost:8888/api/1.0/message/2
 
 
-## Test through POSTMAN
+# Test through POSTMAN
 
 #Launch POSTMAN and try with below CURD operations
 
